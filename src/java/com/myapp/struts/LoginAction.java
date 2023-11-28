@@ -14,6 +14,7 @@ public class LoginAction extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
+    private static final String FAILURE = "failure";
 
     /**
      * This is the action called from the Struts framework.
@@ -29,7 +30,14 @@ public class LoginAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        
+        LoginForm formBean = (LoginForm) form;
+        String name = formBean.getName();
+        String email = formBean.getEmail();
+
+        //validation
+        if ((name == null) || (email == null) || (name.equals("")) || !email.contains("@")) {
+            return mapping.findForward(FAILURE);
+        }
         return mapping.findForward(SUCCESS);
     }
 }
