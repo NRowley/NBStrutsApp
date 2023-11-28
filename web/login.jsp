@@ -14,6 +14,10 @@
             <table border="0">
                 <tbody>
                     <tr>
+                <td colspan="2">
+                    <bean:write name="LoginForm" property="error" filter="false"/>&amp;nbsp;</td>
+            </tr>
+                    <tr>
                         <td>NAME:</td>
                         <td><html:text property="name"/></td>
                     </tr>

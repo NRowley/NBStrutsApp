@@ -11,10 +11,10 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 
 public class LoginForm extends org.apache.struts.action.ActionForm {
-    
+
     private String name;
     private String email;
-
+    private String error;
 
     private int number;
 
@@ -25,13 +25,23 @@ public class LoginForm extends org.apache.struts.action.ActionForm {
     public void setName(String string) {
         name = string;
     }
+
     public String getEmail() {
         return email;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError() {
+        this.error = "<span style='color:red'>Error in fields</span>";
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
+
     public int getNumber() {
         return number;
     }
