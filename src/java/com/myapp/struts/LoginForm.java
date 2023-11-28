@@ -10,47 +10,36 @@ import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 
-/**
- *
- * @author nicro
- */
 public class LoginForm extends org.apache.struts.action.ActionForm {
     
     private String name;
-    
+    private String email;
+
+
     private int number;
 
-    /**
-     * @return
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     * @param string
-     */
     public void setName(String string) {
         name = string;
     }
+    public String getEmail() {
+        return email;
+    }
 
-    /**
-     * @return
-     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
     public int getNumber() {
         return number;
     }
 
-    /**
-     * @param i
-     */
     public void setNumber(int i) {
         number = i;
     }
 
-    /**
-     *
-     */
     public LoginForm() {
         super();
         // TODO Auto-generated constructor stub
